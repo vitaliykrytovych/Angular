@@ -1,0 +1,10 @@
+<div id="div_cenzor">
+  <p>Bad words: <span id="bad_words"></span></p>
+  <div id="div_input">
+      <input type="text" placeholder="word here..." (click)="clearStyleTextarea()">
+      <span id="span_add" (click)="addClick()">Add</span>
+      <span id="span_reset" (click)="resetClick()">Reset</span>
+  </div>
+  <textarea rows="10" placeholder="text here..." (click)="clearStyleInput()"></textarea>
+  <div id="div_print" (click)="cenzorClick()">Cenzor</div>
+</div>
