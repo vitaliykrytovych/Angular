@@ -1,0 +1,17 @@
+#div_print {
+  box-sizing: border-box;
+  color: white;
+  font-style: italic;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  margin: 5px -10px 0 0;
+  background-color: green;
+  border-radius: 5px;
+  cursor: pointer;
+  &:active {
+    border: 1px solid greenyellow;
+    background-color: greenyellow;
+    box-shadow: 0 0 0 4px rgba(5, 236, 5, 0.5);
+  }
+}

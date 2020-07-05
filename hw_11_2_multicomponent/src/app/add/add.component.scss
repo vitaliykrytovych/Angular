@@ -1,0 +1,14 @@
+#span_add {
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  width: 100px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: yellow;
+  &:active {
+    border: 1px solid orange;
+    background-color: orange;
+    box-shadow: 0 0 0 4px rgba(228, 150, 5, 0.5);
+  }
+}

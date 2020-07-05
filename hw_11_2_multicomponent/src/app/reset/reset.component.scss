@@ -1,0 +1,15 @@
+#span_reset {
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  width: 100px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  &:active {
+    border: 1px solid orangered;
+    background-color: orangered;
+    box-shadow: 0 0 0 4px rgba(228, 76, 5, 0.5);
+  }
+}
