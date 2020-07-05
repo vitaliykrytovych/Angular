@@ -14,12 +14,42 @@
 
   p {
     font-weight: bolder;
+    #bad_words {
+      color: red;
+    }
   }
 
-}
-
-#bad_words {
-  color: red;
+  textarea {
+    width: 100%;
+    resize: none;
+    background-color: white;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-family: sans-serif;
+    padding: 10px 5px;
+    outline: none;
+    &:focus {
+      border-radius: 2px;
+      border: 1px solid rgb(15, 73, 233);
+      box-shadow: 0 0 0 3px rgba(15, 73, 233, 0.3);
+    }
+  }
+  #div_print {
+    color: white;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: 5px -10px 0 0;
+    background-color: green;
+    border-radius: 5px;
+    cursor: pointer;
+    &:active {
+      border: 1px solid greenyellow;
+      background-color: greenyellow;
+      box-shadow: 0 0 0 4px rgba(5, 236, 5, 0.5);
+    }
+  }
 }
 
 #div_input {
@@ -34,82 +64,41 @@
     cursor: pointer;
     outline: none;
     color: rgb(130, 130, 130);
-
+    &:focus {
+      border-radius: 2px;
+      border: 1px solid rgb(15, 73, 233);
+      box-shadow: 0 0 0 3px rgba(15, 73, 233, 0.3);
+    }
   }
-
-  input:focus {
+  #span_add {
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    width: 100px;
     border-radius: 2px;
-    border: 1px solid rgb(15, 73, 233);
-    box-shadow: 0 0 0 3px rgba(15, 73, 233, 0.3);
+    cursor: pointer;
+    background-color: yellow;
+    &:active {
+      border: 1px solid orange;
+      background-color: orange;
+      box-shadow: 0 0 0 4px rgba(228, 150, 5, 0.5);
+    }
   }
-}
-
-#span_add,
-#span_reset {
-  display: inline-block;
-  padding: 5px;
-  text-align: center;
-  width: 100px;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-#span_add {
-  background-color: yellow;
-}
-
-#span_add:active {
-  border: 1px solid orange;
-  background-color: orange;
-  box-shadow: 0 0 0 4px rgba(228, 150, 5, 0.5);
-}
-
-#span_reset {
-  background-color: red;
-  color: white;
-}
-
-#span_reset:active {
-  border: 1px solid orangered;
-  background-color: orangered;
-  box-shadow: 0 0 0 4px rgba(228, 76, 5, 0.5);
-}
-
-textarea {
-  width: 100%;
-  resize: none;
-  background-color: white;
-  margin: 5px 0;
-  border-radius: 5px;
-  font-family: sans-serif;
-  padding: 10px 5px;
-  outline: none;
-
-}
-
-textarea:focus {
-  border-radius: 2px;
-  border: 1px solid rgb(15, 73, 233);
-  box-shadow: 0 0 0 3px rgba(15, 73, 233, 0.3);
-}
-
-#div_print {
-  color: white;
-  font-style: italic;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  margin: 5px -10px 0 0;
-  background-color: green;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
-#div_print:active {
-  border: 1px solid greenyellow;
-  background-color: greenyellow;
-  box-shadow: 0 0 0 4px rgba(5, 236, 5, 0.5);
+  #span_reset {
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    width: 100px;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    &:active {
+      border: 1px solid orangered;
+      background-color: orangered;
+      box-shadow: 0 0 0 4px rgba(228, 76, 5, 0.5);
+    }
+  }
 }
 
 .inputEmpty {
