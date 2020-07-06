@@ -1,10 +1,10 @@
 <div id="div_cenzor">
   <p>Bad words: <span id="bad_words">{{allText}}</span></p>
   <div id="div_input">
-      <input type="text" placeholder="word here..." (click)="clearStyleTextarea()" [(ngModel)]="text" name="text">
+      <input type="text" placeholder="word here..." (click)="clearStyleTextarea()" [(ngModel)]="text" name="text" [class.inputEmpty]="inputClass" [attr.placeholder]="inputClass ? 'Please write a word!' : 'word here...'">
       <span id="span_add" (click)="add()">Add</span>
       <span id="span_reset" (click)="resetClick()">Reset</span>
   </div>
-  <textarea rows="10" placeholder="text here..." (click)="clearStyleInput()" [(ngModel)]="textInArea" name="textInArea"></textarea>
+  <textarea rows="10" placeholder="text here..." (click)="clearStyleInput()" [(ngModel)]="textInArea" name="textInArea" [class.inputEmpty]="areaClass" [attr.placeholder]="areaClass ? 'Please write a text!' : 'text here...'"></textarea>
   <div #rt id="div_print" (click)="cenzorClick()">Cenzor</div>
 </div>

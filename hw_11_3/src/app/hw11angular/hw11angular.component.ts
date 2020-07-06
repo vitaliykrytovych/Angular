@@ -10,6 +10,8 @@ export class Hw11angularComponent implements OnInit {
   text: string;
   allText = 'java, tottenham';
   textInArea = '';
+  inputClass = false;
+  areaClass = false;
 
   constructor() {}
 
@@ -19,47 +21,35 @@ export class Hw11angularComponent implements OnInit {
 
   add(): void {
     if (this.text) {
+      this.inputClass = false;
       this.badArr.push(this.text);
       this.allText = this.badArr.join(', ');
       this.text = '';
     } else {
-      const inpValue = document.querySelector('input');
-      if (!inpValue.classList.contains('inputEmpty')) {
-        inpValue.classList.add('inputEmpty');
-      }
-      inpValue.placeholder = 'Please write a word!';
+      this.inputClass = false;
+      this.inputClass = true;
     }
   }
   clearStyleInput(): void {
-    const inpValue = document.querySelector('input');
-    inpValue.placeholder = 'word here...';
-    if (inpValue.classList.contains('inputEmpty')) {
-      inpValue.classList.remove('inputEmpty');
-    }
+    this.inputClass = false;
   }
   clearStyleTextarea(): void {
-    const textArea = document.querySelector('textarea');
-    textArea.placeholder = 'text here...';
-    if (textArea.classList.contains('inputEmpty')) {
-      textArea.classList.remove('inputEmpty');
-    }
+    this.areaClass = false;
   }
   resetClick(): void {
-    document.getElementById('bad_words').textContent = '';
-    document.querySelector('input').value = '';
-    document.querySelector('textarea').value = '';
+    this.allText = '';
+    this.text = '';
+    this.textInArea = '';
     this.clearStyleInput();
     this.clearStyleTextarea();
     this.badArr.length = 0;
   }
   cenzorClick(): void {
-    const textArea = document.querySelector('textarea');
     if (this.textInArea === '') {
-      if (!textArea.classList.contains('inputEmpty')) {
-        textArea.classList.add('inputEmpty');
-      }
-      textArea.placeholder = 'Please write a text!';
+      this.areaClass = false;
+      this.areaClass = true;
     } else {
+      this.areaClass = false;
       this.clearStyleTextarea();
       const arrTextarea = this.textInArea.split(' ');
       this.badArr.forEach((elemArrPrint) => {
