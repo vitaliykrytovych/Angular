@@ -1,0 +1,41 @@
+<div class="div_all">
+  <div class="my_form">
+    <form name="enter_user">
+      <div>
+        <p>Login</p>
+        <input type="text" class="login" placeholder="Enter login" [(ngModel)]="textLogin" name="textLogin">
+      </div>
+      <div>
+        <p>Password</p>
+        <input type="password" class="password" placeholder="Enter password" [(ngModel)]="textPassword" name="textPassword">
+      </div>
+      <div>
+        <p>Email</p>
+        <input type="text" class="email" placeholder="Enter email" [(ngModel)]="textEmail" name="textEmail">
+      </div>
+      <div class="addUser" (click)="addUser()">{{ nameBut }}</div>
+    </form>
+  </div>
+  <div class="my_table">
+    <table class="table">
+      <tr>
+        <th>#</th>
+        <th>Login</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <ng-container *ngIf="arrUser.length">
+        <tr *ngFor="let objUs of arrUser; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{objUs.login}}</td>
+          <td>{{objUs.password}}</td>
+          <td>{{objUs.email}}</td>
+          <td><button class="editUser" (click)="editUser(i)">Edit</button></td>
+          <td><button class="deleteUser" (click)="deleteUser(i)">Delete</button></td>
+          </tr>
+      </ng-container>
+    </table>
+  </div>
+</div>
