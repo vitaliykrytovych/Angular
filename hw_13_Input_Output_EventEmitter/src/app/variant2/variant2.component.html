@@ -1,0 +1,54 @@
+<div class="div_all">
+  <div class="my_form">
+      <div>
+        <ng-content></ng-content>
+        <h2>User: {{ passText }}</h2>
+      </div>
+    <form>
+      <div class="div_input">
+        <input type="text" placeholder="Enter task" [(ngModel)]="task" name="task">
+        <div class="addTask" (click)="addTask()">Add</div>
+      </div>
+    </form>
+  </div>
+  <div class="my_table">
+    <table class="table">
+      <tr>
+        <th style="width: 5%;">#</th>
+        <th style="width: 25%;">Task</th>
+        <th style="width: 10%;">Check</th>
+        <th style="width: 40%;">Done / In progress</th>
+        <th style="width: 10%;">Edit</th>
+        <th style="width: 10%;">Delete</th>
+      </tr>
+      <ng-container *ngIf="arrTask.length">
+        <tr *ngFor="let objTask of arrTask; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{objTask.task}}</td>
+          <td class="td_check">
+            <input type="checkbox" id="{{i}}" (click)="changeStatus(objTask)">
+            <div><img src="../../assets/check.svg" [style.opacity]="objTask.taskStatus ? 1 : 0"></div>
+          </td>
+          <td>
+            <ng-container *ngIf="!objTask.taskStatus">
+              <label for="{{i}}" style="color: red;">In PROGRESS</label>
+            </ng-container>
+            <ng-container *ngIf="objTask.taskStatus">
+              <label for="{{i}}" style="color: green;">Done</label>
+            </ng-container>
+          </td>
+          <td><button class="editTask" (click)="editTask(i)" [disabled]="objTask.taskStatus">Edit</button></td>
+          <td><button class="deleteTask" (click)="deleteTask(i)" [disabled]="!objTask.taskStatus">Delete</button></td>
+        </tr>
+      </ng-container>
+      <tr class="tr_last" *ngIf="visSave">
+        <td colspan="3"></td>
+        <td><input type="text" [(ngModel)]="taskEdit" name="taskEdit"></td>
+        <td>
+          <div class="saveTask" (click)="saveTask()">Save</div>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
