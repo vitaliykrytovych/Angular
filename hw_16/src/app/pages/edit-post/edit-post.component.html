@@ -1,0 +1,13 @@
+<div class="outside" *ngIf="varService.visEditPost">
+  <div class="container">
+    <h2>Edit post</h2>
+    <p>Title:</p>
+    <input type="text" [(ngModel)]="varService.titleEditPost" name="editTitle">
+    <p>Text:</p>
+    <textarea cols="55" rows="10" [(ngModel)]="varService.textEditPost" name="editText"></textarea>
+    <div class="butt">
+      <div class="butt_close" (click)="closeEditPost()">Close</div>
+      <div class="butt_right" (click)="saveEditPost()">Save</div>
+    </div>
+  </div>
+</div>

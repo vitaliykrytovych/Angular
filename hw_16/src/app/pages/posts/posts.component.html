@@ -1,0 +1,17 @@
+<div class="post" *ngFor="let objBlogs of arrBlogs; let i = index">
+  <div class="top">
+    <div class="div_post">
+      <h3>{{arrBlogs[i].topic}}</h3>
+      <p>Posted by: {{arrBlogs[i].postedBy}}</p>
+      <p>{{arrBlogs[i].message}}</p>
+    </div>
+    <div class="div_date">
+      <img src="../../../assets/clock.svg">
+      <span></span>{{arrBlogs[i].date | date:'HH:mm, dd-MM-yyyy'}}
+    </div>
+  </div>
+  <div class="butt" *ngIf="varService.nameEnterUser === 'admin' || varService.nameEnterUser === arrBlogs[i].postedBy">
+    <div class="butt_edit" (click)="clickEdit(i, arrBlogs[i].topic, arrBlogs[i].message)">Edit</div>
+    <div class="butt_delete" (click)="clickDel(i)">Delete</div>
+  </div>
+</div>

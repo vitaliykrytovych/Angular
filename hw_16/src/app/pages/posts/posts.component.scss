@@ -1,0 +1,44 @@
+.post {
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 5px;
+  padding: 10px 20px 20px;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .div_date {
+      display: flex;
+      align-items: center;
+      img {
+        width: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .butt {
+    display: flex;
+    justify-content: flex-end;
+
+    div {
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover{
+        opacity: 0.6;
+      }
+    }
+
+    .butt_edit {
+      background: orange;
+      margin-right: 10px;
+    }
+
+    .butt_delete {
+      background: red;
+      color: white;
+    }
+  }
+}

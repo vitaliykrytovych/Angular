@@ -1,0 +1,32 @@
+<div class="div_all">
+  <form>
+    <input type="text" placeholder="title here..." [(ngModel)]="title" name="title">
+    <textarea rows="5" placeholder="text here..." [(ngModel)]="text" name="text"></textarea>
+    <input type="text" placeholder="autor here..." [(ngModel)]="autor" name="autor">
+    <div class="add" (click)="add()">{{ nameBut }}</div>
+  </form>
+  <table class="table">
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Date</th>
+      <th>Autor</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th class="last"></th>
+    </tr>
+    <ng-container *ngIf="arrBlogs.length">
+      <tr *ngFor="let objBlog of arrBlogs; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{objBlog?.title}}</td>
+        <td>{{objBlog?.text}}</td>
+        <td>{{objBlog?.date | date:'MMM d, yyyy'}}</td>
+        <td>{{objBlog?.user}}</td>
+        <td><button class="edit" (click)="editUser(i, objBlog)">Edit</button></td>
+        <td><button class="delete" (click)="deleteUser(objBlog.id)">Delete</button></td>
+        <td class="last"></td>
+      </tr>
+    </ng-container>
+  </table>
+</div>

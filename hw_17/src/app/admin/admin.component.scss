@@ -1,0 +1,28 @@
+.admin {
+  display: flex;
+  padding: 20px;
+  .nav {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    li {
+      color: grey;
+      cursor: pointer;
+      list-style-type: none;
+      outline: none;
+      width: 200px;
+      padding: 20px;
+      &:hover {
+        color: rgb(70, 70, 70);
+      }
+    }
+  }
+  .base {
+    width: 100%;
+    margin-left: 20px;
+  }
+  .active {
+    background-color: rgba(170, 170, 170, 0.4);
+    border-radius: 5px;
+  }
+}

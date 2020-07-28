@@ -1,0 +1,15 @@
+<div class="outside" *ngIf="varService.visSignUp">
+  <div class="container">
+    <h2>Sign Up</h2>
+    <p>Username:</p>
+    <input type="text" [(ngModel)]="username" name="username">
+    <p>Email:</p>
+    <input type="text" [(ngModel)]="email" name="email">
+    <p>Password:</p>
+    <input type="password" [(ngModel)]="password" name="password">
+    <div class="butt">
+      <div class="butt_close" (click)="closeSignUp()">Close</div>
+      <div class="butt_right" (click)="submitSignUp()">Submit</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgb(207, 206, 206);
+  margin-bottom: 20px;
+  .text {
+    color: white;
+    line-height: 30px;
+  }
+
+  .btn {
+    display: flex;
+    div {
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .signIn,
+    .addPost {
+      color: green;
+      border: 1px solid green;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      cursor: pointer;
+      &:hover{
+        color: white;
+        background-color: green;
+      }
+    }
+    .addPost {
+      border-right: none;
+    }
+    .user {
+      background-color: orange;
+      border: 1px solid orange;
+      border-radius: 0;
+    }
+    .signOut,
+    .signUP {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      cursor: pointer;
+    }
+    .signOut {
+      color: orange;
+      border: 1px solid orange;
+      border-left: none;
+      &:hover{
+        color: white;
+        background-color: orange;
+      }
+    }
+    .signUP {
+      color: blue;
+      border: 1px solid blue;
+      &:hover{
+        color: white;
+        background-color: blue;
+      }
+    }
+  }
+}

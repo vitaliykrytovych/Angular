@@ -1,0 +1,65 @@
+<div class="formContainer" *ngIf="visForm">
+  <div class="my_form">
+    <div class="h4X">
+      <h4 *ngIf="editText; else elseBlock">Add phone</h4>
+      <ng-template #elseBlock>
+        <h4>Edit phone</h4>
+      </ng-template>
+      <p (click)="addX()">X</p>
+    </div>
+    <input type="text" placeholder="First name goes here" [(ngModel)]="firstNameInput" name="firstNameInput">
+    <input type="text" placeholder="Second name goes here" [(ngModel)]="lastNameInput" name="lastNameInput">
+    <input type="text" placeholder="Number phone goes here" [(ngModel)]="phoneNumInput" name="phoneNumInput">
+    <div class="containerSave">
+      <div class="addContact button" (click)="addContact()">Save</div>
+    </div>
+  </div>
+</div>
+<div class="div_all">
+  <div>
+    <ng-content></ng-content>
+  </div>
+  <div class="searchContact">
+    <input type="text" [(ngModel)]="searchContact">
+    <div class="button" (click)="visualForm()">Add phone</div>
+  </div>
+
+  <div class="my_table">
+    <table class="table">
+      <tr>
+        <th style="width: 30%;" (click)="sortFunc('firstName')">
+          <span>First name </span>
+          <span *ngIf='firstArrows !== ""'>
+            <img *ngIf='firstArrows' src="../../assets/angle-down.svg">
+            <img *ngIf='!firstArrows' src="../../assets/angle-up.svg">
+          </span>
+        </th>
+        <th style="width: 30%;" (click)="sortFunc('lastName')">
+          <span>Last name </span>
+          <span *ngIf='lastArrows !== ""'>
+            <img *ngIf='lastArrows' src="../../assets/angle-down.svg">
+            <img *ngIf='!lastArrows' src="../../assets/angle-up.svg">
+          </span>
+        </th>
+        <th style="width: 30%;" (click)="sortFunc('phoneNum')">
+          <span>Number </span>
+          <span *ngIf='phoneArrows !== ""'>
+            <img *ngIf='phoneArrows' src="../../assets/angle-down.svg">
+            <img *ngIf='!phoneArrows' src="../../assets/angle-up.svg">
+          </span>
+        </th>
+        <th style="width: 5%;">Edit</th>
+        <th style="width: 5%;">Delete</th>
+      </tr>
+      <ng-container *ngIf="arrUser.length">
+        <tr *ngFor="let objTask of arrUser | search:searchContact | sort:[sortContact, clickElem]; let i = index">
+          <td>{{objTask.firstName | titlecase}}</td>
+          <td>{{objTask.lastName | titlecase}}</td>
+          <td>{{objTask.phoneNum}}</td>
+          <td><button class="editContact button" (click)="editContact(i)">Edit</button></td>
+          <td><button class="deleteContact button" (click)="deleteContact(i)">Delete</button></td>
+        </tr>
+      </ng-container>
+    </table>
+  </div>
+</div>

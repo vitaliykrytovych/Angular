@@ -1,0 +1,13 @@
+<div class="outside" *ngIf="varService.visAddPost">
+  <div class="container">
+    <h2>Add post</h2>
+    <p>Title:</p>
+    <input type="text" [(ngModel)]="title" name="title">
+    <p>Text:</p>
+    <textarea cols="55" rows="10" [(ngModel)]="text" name="text"></textarea>
+    <div class="butt">
+      <div class="butt_close" (click)="closeAddPost()">Close</div>
+      <div class="butt_right" (click)="postAddPost()">Post</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<header>
+  <div class="text">Angular Blog</div>
+  <div class="btn">
+    <div class="signIn" *ngIf="!varService.nameEnterUser" (click)="clickSignIn()">Sign In</div>
+    <div class="addPost" *ngIf="varService.nameEnterUser" (click)="clickAddPost()">Add post</div>
+    <div class="user" *ngIf="varService.nameEnterUser">{{varService.nameEnterUser}}</div>
+    <div class="signOut" *ngIf="varService.nameEnterUser" (click)="clickSignOut()">Sign Out</div>
+    <div class="signUP" *ngIf="!varService.nameEnterUser" (click)="clickSignUp()">Sign Up</div>
+  </div>
+</header>

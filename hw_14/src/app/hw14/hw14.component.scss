@@ -1,0 +1,207 @@
+.button {
+  width: 80px;
+  height: 38px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgb(164, 164, 165);
+  outline: none;
+  padding-left: 10px;
+}
+
+.formContainer {
+  position: fixed;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(240, 240, 240, 0.8);
+
+  .my_form {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+
+    .h4X {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid grey;
+      padding: 0 10px;
+      margin-bottom: 10px;
+
+      h4,
+      p {
+        padding: 10px;
+      }
+
+      p {
+        cursor: pointer;
+      }
+    }
+
+    input {
+      width: 460px;
+      margin: 10px 20px;
+      padding-left: 10px;
+
+      &:focus {
+        border: 1px solid rgb(25, 123, 228);
+        box-shadow: 0 0 0 2px rgba(25, 123, 228, 0.3);
+      }
+    }
+
+    .containerSave {
+      margin-top: 20px;
+      border-top: 1px solid grey;
+      padding: 10px 20px;
+      text-align: right;
+
+      .addContact {
+        display: inline-block;
+        line-height: 40px;
+        color: white;
+        background-color: rgb(25, 123, 228);
+        text-align: center;
+
+        &:hover {
+          background-color: blue;
+          color: white;
+          animation-name: buttonOpasity;
+          animation-timing-function: linear;
+          animation-duration: 0.1s;
+        }
+
+        &:active {
+          animation-name: addTaskShadow;
+          animation-timing-function: linear;
+          animation-duration: 0.5s;
+        }
+
+        @keyframes addTaskShadow {
+          0% {
+            box-shadow: 0 0 0 4px rgba(25, 123, 228, 0.3);
+          }
+
+          100% {
+            box-shadow: 0 0 0 0 rgba(25, 123, 228, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+.div_all {
+  width: 100%;
+  margin-top: 50px;
+
+  .searchContact {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+
+    input {
+      display: block;
+      width: 75%;
+    }
+
+    div {
+      background-color: green;
+      color: white;
+      width: 20%;
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    min-width: 730px;
+
+    tr {
+      border-top: 1px solid rgb(110, 110, 110);
+      border-bottom: 1px solid rgb(110, 110, 110);
+      height: 50px;
+
+      th,
+      td {
+        padding: 0 5px;
+      }
+      th {
+        text-align: left;
+        span {
+          line-height: 50px;
+        }
+        img {
+          vertical-align: middle;
+          width: 30px;
+        }
+      }
+    }
+    .editContact {
+      background-color: rgb(233, 140, 19);
+      border: 1px solid rgb(233, 140, 19);
+
+      &:hover {
+        background-color: rgb(199, 118, 12);
+        animation-timing-function: linear;
+        animation-duration: 0.1s;
+      }
+
+      &:active {
+        animation-name: editTaskShadow;
+        animation-timing-function: linear;
+        animation-duration: 0.5s;
+      }
+
+      @keyframes editTaskShadow {
+        0% {
+          box-shadow: 0 0 0 4px rgba(233, 140, 19, 0.5);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(233, 140, 19, 0.5);
+        }
+      }
+    }
+
+    .deleteContact {
+      background-color: rgb(187, 49, 102);
+      border: 1px solid rgb(187, 49, 102);
+      color: white;
+
+      &:hover {
+        background-color: rgb(133, 19, 62);
+        animation-timing-function: linear;
+        animation-duration: 0.1s;
+      }
+
+      &:active {
+        animation-name: deleteTaskShadow;
+        animation-timing-function: linear;
+        animation-duration: 0.5s;
+      }
+
+      @keyframes deleteTaskShadow {
+        0% {
+          box-shadow: 0 0 0 4px rgba(206, 188, 195, 0.5);
+        }
+
+        100% {
+          box-shadow: 0 0 0 0 rgba(206, 188, 195, 0.5);
+        }
+      }
+    }
+  }
+}
