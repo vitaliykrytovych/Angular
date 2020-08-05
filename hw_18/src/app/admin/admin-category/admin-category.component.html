@@ -1,0 +1,64 @@
+<main>
+  <ng-container *ngIf="modalVisual">
+    <div class="modal_out">
+      <div class="modal">
+        <h3>Category modal</h3>
+        <div class="modal_input">
+          <input type="text" placeholder="name EN here..." [(ngModel)]="nameEN">
+          <input type="text" placeholder="name UA here..." [(ngModel)]="nameUA">
+        </div>
+        <div class="modal_button">
+          <div class="butt_close" (click)="close()">Close</div>
+          <div class="butt_add" (click)="addCategory()">Add</div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+<ng-container *ngIf="modalDelete">
+  <div class="delete_out">
+    <div class="delete_container">
+      <div class="butt_dismiss" (click)="dismiss()">Dismiss</div>
+      <div class="butt_delete" (click)="deleteCategory()">Delete</div>
+    </div>
+  </div>
+</ng-container>
+  <div class="head">
+    <h4>Category</h4>
+    <div class="add" (click)="add()">Add</div>
+  </div>
+  <input type="text" placeholder="filter category..." [(ngModel)]="searchCategory">
+  <ng-container *ngIf="arrCategory.length">
+    <table class="table">
+      <tr>
+        <th (click)="sortFunc('id')">
+          <span>№</span>
+          <span *ngIf='sortNam !== ""'>
+            <img *ngIf='sortNam' src="../../assets/angle-down.svg">
+            <img *ngIf='!sortNam' src="../../assets/angle-up.svg">
+          </span>
+        </th>
+        <th (click)="sortFunc('nameEN')">
+          <span>Name EN</span>
+          <span *ngIf='sortEN !== ""'>
+            <img *ngIf='sortEN' src="../../assets/angle-down.svg">
+            <img *ngIf='!sortEN' src="../../assets/angle-up.svg">
+          </span>
+        </th>
+        <th (click)="sortFunc('nameUA')">
+          <span>Name UA</span>
+          <span *ngIf='sortUA !== ""'>
+            <img *ngIf='sortUA' src="../../assets/angle-down.svg">
+            <img *ngIf='!sortUA' src="../../assets/angle-up.svg">
+          </span>
+        </th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let objCategory of arrCategory | search:searchCategory | sort:[sortCategory, clickElem]; let i = index">
+        <td>{{ objCategory?.id }}</td>
+        <td>{{ objCategory?.nameEN }}</td>
+        <td>{{ objCategory?.nameUA }}</td>
+        <td><button class="delete" (click)="delet(objCategory.id)">Delete</button></td>
+      </tr>
+    </table>
+  </ng-container>
+</main>

@@ -1,0 +1,161 @@
+.div_all {
+  form {
+    input,
+    textarea {
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid rgb(164, 164, 165);
+      outline: none;
+      &:focus {
+        border: 1px solid rgb(25, 123, 228);
+        box-shadow: 0 0 0 2px rgba(25, 123, 228, 0.3);
+      }
+    }
+    input {
+      height: 40px;
+      padding-left: 10px;
+    }
+
+    textarea {
+      resize: none;
+      margin: 20px 0;
+      padding: 10px 0 0 10px;
+
+      &::placeholder {
+        font-family: sans-serif;
+      }
+    }
+
+    .add {
+      width: max-content;
+      color: green;
+      border: 1px solid green;
+      margin: 20px 0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: green;
+        color: white;
+        animation-name: buttonOpasity;
+        animation-timing-function: linear;
+        animation-duration: 0.1s;
+      }
+
+      &:active {
+        animation-name: addUserShadow;
+        animation-timing-function: linear;
+        animation-duration: 0.5s;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+      text-align: left;
+      border-top: 1px solid rgb(110, 110, 110);
+      border-bottom: 1px solid rgb(110, 110, 110);
+      height: 50px;
+
+      th,
+      td {
+        min-width: 110px;
+        text-align: left;
+      }
+
+      .last {
+        width: 100%;
+      }
+
+      .edit {
+        background-color: rgb(233, 140, 19);
+        border: 1px solid rgb(233, 140, 19);
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(199, 118, 12);
+          animation-name: buttonOpasity;
+          animation-timing-function: linear;
+          animation-duration: 0.1s;
+        }
+
+        &:active {
+          animation-name: editUserShadow;
+          animation-timing-function: linear;
+          animation-duration: 0.5s;
+        }
+      }
+
+      .delete {
+        background-color: rgb(187, 49, 102);
+        border: 1px solid rgb(187, 49, 102);
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(133, 19, 62);
+          animation-name: buttonOpasity;
+          animation-timing-function: linear;
+          animation-duration: 0.1s;
+        }
+
+        &:active {
+          animation-name: deleteUserShadow;
+          animation-timing-function: linear;
+          animation-duration: 0.5s;
+        }
+      }
+    }
+  }
+
+  .add,
+  .edit,
+  .delete {
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+  @keyframes buttonOpasity {
+    0% {
+      opacity: 0.3;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes addUserShadow {
+    0% {
+      box-shadow: 0 0 0 4px rgba(9, 175, 36, 0.5);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgba(9, 175, 36, 0.5);
+    }
+  }
+
+  @keyframes editUserShadow {
+    0% {
+      box-shadow: 0 0 0 4px rgba(233, 140, 19, 0.5);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgba(233, 140, 19, 0.5);
+    }
+  }
+
+  @keyframes deleteUserShadow {
+    0% {
+      box-shadow: 0 0 0 4px rgba(206, 188, 195, 0.5);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgba(206, 188, 195, 0.5);
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="blogs">
+  <ng-container *ngIf="arrBlogs.length">
+    <div class="container" *ngFor="let objBlogs of arrBlogs; let i = index">
+      <img src="../../../assets/63a5eec956ad9fe58cc2f36117e98456.jpg">
+      <p>
+        <span class="date">{{objBlogs?.date | date:'MMM d, yyyy'}}</span>
+        <span>{{objBlogs?.user}}</span>
+      </p>
+      <h3>{{objBlogs?.title}}</h3>
+      <div>{{objBlogs?.text}}</div>
+    </div>
+  </ng-container>
+</div>

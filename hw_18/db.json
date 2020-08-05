@@ -1,0 +1,20 @@
+{
+  "posts": [],
+  "categories": [
+    {
+      "nameEN": "pizza",
+      "nameUA": "піца",
+      "id": 1
+    },
+    {
+      "nameEN": "salad",
+      "nameUA": "салат",
+      "id": 2
+    },
+    {
+      "nameEN": "drinks",
+      "nameUA": "напої",
+      "id": 3
+    }
+  ]
+}
